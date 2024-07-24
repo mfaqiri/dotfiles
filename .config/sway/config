@@ -57,6 +57,10 @@ output * bg /usr/share/backgrounds/sway/4k-Sunset-Cityscape-Amidst-Clouds-4K-PC-
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input type:keyboard {
+    xkb_layout us
+    xkb_variant dvorak
+}
 
 ### Key bindings
 #
