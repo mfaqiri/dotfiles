@@ -1,5 +1,1 @@
-require("mfaqiri.set")
-require("mfaqiri.remap")
-
-
-
+require('mfaqiri/init')
