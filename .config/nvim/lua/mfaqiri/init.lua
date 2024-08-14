@@ -3,27 +3,27 @@ require("mfaqiri.remap")
 require("mfaqiri.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
-local mfaqiriGroup = augroup('mfaqiri', {})
+local mfaqiriGroup = augroup("mfaqiri", {})
 
 local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup('HighlightYank', {})
+local yank_group = augroup("HighlightYank", {})
 
 function R(name)
-    require('plenary.reload').reload_module(name)
+    require("plenary.reload").reload_module(name)
 end
 
 vim.filetype.add({
     extension = {
-        templ = 'templ',
+        templ = "templ",
     }
 })
 
-autocmd('TextYankPost', {
+autocmd("TextYankPost", {
     group = yank_group,
-    pattern = '*',
+    pattern = "*",
     callback = function()
         vim.highlight.on_yank({
-            higroup = 'IncSearch',
+            higroup = "IncSearch",
             timeout = 40,
         })
     end,
@@ -35,7 +35,7 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
-autocmd('LspAttach', {
+autocmd("LspAttach", {
     group = mfaqiriGroup,
     callback = function(e)
         local opts = { buffer = e.buf }

@@ -1,1 +1,1 @@
-require('mfaqiri/init')
+require('mfaqiri')
