@@ -67,6 +67,13 @@ return {
                         }
                     }
                 end,
+                ["emmet_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.emmet_ls.setup {
+                        capabilities = capabilities,
+                        filetypes = { "typescript", "templ", "html", "css", "javascript" },
+                    }
+                end,
             }
         })
 
